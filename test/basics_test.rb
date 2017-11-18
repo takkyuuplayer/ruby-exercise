@@ -2,8 +2,7 @@ require "minitest/autorun"
 
 class TestBasic < Minitest::Test
   def test_string
-    hello = "hello"
-    world = " world"
+    hello, world = "hello", " world"
     assert_equal "hello world", hello + world
   end
 
