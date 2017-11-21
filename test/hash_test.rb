@@ -16,4 +16,30 @@ class HashTest < Minitest::Test
 
     assert_equal 4, numbers.keys.length
   end
+
+  def test_hash_with_default
+    h = Hash.new("default")
+
+    assert_equal h[1], "default"
+    assert_equal h[5], "default"
+
+    h[1] << "bar"
+
+    assert_equal h[1], "defaultbar"
+    assert_equal h[5], "defaultbar"
+    assert_equal h[6], "defaultbar"
+  end
+
+  def test_hash_with_default_block
+    h = Hash.new { |hash, key| hash[key] = "default" }
+
+    assert_equal h[1], "default"
+    assert_equal h[5], "default"
+
+    h[1] << "bar"
+
+    assert_equal h[1], "defaultbar"
+    assert_equal h[5], "default"
+    assert_equal h[6], "default"
+  end
 end
