@@ -7,6 +7,12 @@ class ArrayTest < Minitest::Test
     assert_equal [2,3,4,5], numbers
   end
 
+  def test_add_element
+    numbers = [0, 1, 2]
+
+    assert_equal [0, 1, 2, nil, nil, 5, 1], numbers
+  end
+
   def test_partial
     assert_equal [1], [1,2,3,4,5][0..0]
     assert_equal [], [1,2,3,4,5][0...0]

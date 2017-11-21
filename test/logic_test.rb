@@ -13,4 +13,14 @@ class LogicTest < Minitest::Test
   def test_case
     assert_equal 'c', caseStatement(5, 3)
   end
+
+  def test_logical_operator
+    a = 1 and true
+
+    assert_equal 1, a
+
+    b = 1 && true
+
+    assert_equal true, b
+  end
 end
