@@ -4,6 +4,9 @@ class NumberTest < Minitest::Test
   def test_increment
     counter = 0
   end
+  def test_bit_shift
+    assert_equal 4, 1 << 2
+  end
   def test_float
     assert_equal 2.0 + 2.5, 4.5
     assert_equal 2.0 + 2.6, 4.6
