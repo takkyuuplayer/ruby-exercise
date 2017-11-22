@@ -42,4 +42,13 @@ class HashTest < Minitest::Test
     assert_equal h[5], "default"
     assert_equal h[6], "default"
   end
+
+  def test_to_proc
+    h = { a: 1, b: 2, c: 3}
+    hp = h.to_proc
+
+    assert_instance_of Proc, hp
+    assert_equal 1, hp[:a]
+    assert_equal 1, hp.call(:a)
+  end
 end
