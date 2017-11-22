@@ -33,4 +33,17 @@ class StringTest < Minitest::Test
 
     assert_equal 5, sameIdx
   end
+
+  def test_symbol
+    str = "test"
+    str2 = "test"
+    sym = :test
+    sym2 = :test
+
+    assert_equal false, str.frozen?
+    assert_equal true, sym.frozen?
+
+    assert str.object_id != str2.object_id
+    assert sym.object_id == sym2.object_id
+  end
 end
