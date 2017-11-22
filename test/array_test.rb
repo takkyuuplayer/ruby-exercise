@@ -14,4 +14,11 @@ class ArrayTest < Minitest::Test
     assert_equal [3,4,5], [1,2,3,4,5][(5/2)..-1]
     assert_equal [1,2], [1,2,3,4,5][0...(5/2)]
   end
+
+  def test_map_itself
+    a1 = [1, 2, 3, 4]
+    a2 = a1.map(&:itself)
+
+    assert a1.object_id != a2.object_id
+  end
 end

@@ -2,6 +2,7 @@ require "minitest/autorun"
 
 module Foo
   extend self
+
   def foo
     1
   end
