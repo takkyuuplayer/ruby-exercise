@@ -1,4 +1,7 @@
 .PHONY: test
 
+setup:
+	bundle install
+
 test:
-	rake test
+	bundle exec -- rake test
