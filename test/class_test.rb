@@ -11,7 +11,7 @@ class Point
   end
   attr_accessor :x, :y
 
-  def distanceFromOrigin
+  def distance_from_origin
     Math.hypot(@x, @y)
   end
 
@@ -39,7 +39,7 @@ class PointTest < Minitest::Test
     assert_equal 3, point.x
     assert_equal 4, point.y
 
-    assert_equal 5, point.distanceFromOrigin
+    assert_equal 5, point.distance_from_origin
   end
 
   def test_class

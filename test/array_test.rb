@@ -13,7 +13,7 @@ class ArrayTest < Minitest::Test
     assert_equal [1], [1, 2, 3, 4, 5][0..0]
     assert_equal [], [1, 2, 3, 4, 5][0...0]
 
-    assert_equal [3, 4, 5], [1, 2, 3, 4, 5][(5 / 2)..-1]
+    assert_equal [3, 4, 5], [1, 2, 3, 4, 5][(5 / 2)..]
     assert_equal [1, 2], [1, 2, 3, 4, 5][0...(5 / 2)]
   end
 

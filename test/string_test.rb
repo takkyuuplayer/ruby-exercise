@@ -16,24 +16,24 @@ class StringTest < Minitest::Test
     s = 'happyhacker'
     t = 'happyrank'
 
-    sameIdx = 0
+    same_idx = 0
     (0..t.length).each do |idx|
-      t[idx] == s[idx] ? sameIdx += 1 : break
+      t[idx] == s[idx] ? same_idx += 1 : break
     end
 
-    assert_equal 5, sameIdx
+    assert_equal 5, same_idx
   end
 
   def test_how_similar2
     s = 'happyha'
     t = 'happyrank'
 
-    sameIdx = 0
+    same_idx = 0
     (0..t.length).each do |idx|
-      t[idx] == s[idx] ? sameIdx += 1 : break
+      t[idx] == s[idx] ? same_idx += 1 : break
     end
 
-    assert_equal 5, sameIdx
+    assert_equal 5, same_idx
   end
 
   def test_symbol

@@ -18,7 +18,7 @@ class NumberTest < Minitest::Test
   end
 
   def test_infinite
-    assert_equal 1.0 / 0.0 > 0, true
+    assert_equal (1.0 / 0.0).positive?, true
 
     assert_equal (1.0 / 0.0).infinite?, 1
     assert_nil(-1.0.infinite?)

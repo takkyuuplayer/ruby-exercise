@@ -34,7 +34,6 @@ class DupCloneTest < Minitest::Test
     def k.square
       @num * @num
     end
-    k.taint
     k.freeze
 
     assert_equal true, k.methods.include?(:square)

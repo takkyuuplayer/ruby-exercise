@@ -28,6 +28,6 @@ class EnumerableTest < Minitest::Test
   def test_select
     numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    assert_equal [2, 4, 6, 8], numbers.select { |item| item.even? }
+    assert_equal [2, 4, 6, 8], numbers.select(&:even?)
   end
 end
