@@ -1,4 +1,4 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class BoolTest < Minitest::Test
   def test_object_id

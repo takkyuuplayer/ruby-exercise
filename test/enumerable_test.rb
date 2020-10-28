@@ -1,14 +1,14 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class EnumerableTest < Minitest::Test
   def test_inject
     numbers = [1, 2, 3, 4, 5]
 
-    assert_equal 15, numbers.reduce(0) { | sum, n | sum + n }
+    assert_equal 15, numbers.reduce(0) { |sum, n| sum + n }
   end
 
   def test_each
-    numbers = ['a', 'b', 'c', 'd', 'e']
+    numbers = %w[a b c d e]
     ret = ''
     numbers.each { |item| ret += item }
 
@@ -16,7 +16,7 @@ class EnumerableTest < Minitest::Test
   end
 
   def test_each_with_index
-    numbers = ['a', 'b', 'c', 'd', 'e']
+    numbers = %w[a b c d e]
     ret = ''
     numbers.each_with_index { |item, idx| ret += item + idx.to_s }
 
@@ -24,8 +24,8 @@ class EnumerableTest < Minitest::Test
   end
 
   def test_select
-    numbers = [1, 2, 3, 4, 5, 6,7, 8]
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    assert_equal [2, 4, 6, 8], numbers.select{ |item| item % 2 == 0 }
+    assert_equal [2, 4, 6, 8], numbers.select { |item| item.even? }
   end
 end

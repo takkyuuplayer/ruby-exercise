@@ -1,4 +1,4 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class StringNumber
   include Comparable
@@ -21,4 +21,3 @@ class MixinTest < Minitest::Test
     assert_equal [one, two, ten], [two, one, ten].sort
   end
 end
-

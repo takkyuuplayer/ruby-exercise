@@ -1,4 +1,4 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class Klass
   attr_accessor :num
@@ -10,7 +10,6 @@ class Klass
   def calc
     @num * @num
   end
-
 end
 
 module M

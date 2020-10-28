@@ -1,4 +1,4 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class Point
   @@some = 0
@@ -10,18 +10,16 @@ class Point
   attr_accessor :x, :y
 
   def distanceFromOrigin
-    Math::hypot(@x, @y)
+    Math.hypot(@x, @y)
   end
 
   def distance(point = nil)
-    if point.nil?
-      return Math::hypot(@x, @y)
-    end
+    return Math.hypot(@x, @y) if point.nil?
 
-    return Math::hypot(point.x - @x, point.y - @y)
+    Math.hypot(point.x - @x, point.y - @y)
   end
 
-  def Point.Some(s = nil)
+  def self.Some(s = nil)
     s.nil? ? @@some : @@some = s
   end
 end

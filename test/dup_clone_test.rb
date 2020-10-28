@@ -1,7 +1,8 @@
-require "minitest/autorun"
+require 'minitest/autorun'
 
 class Klass
   attr_accessor :num
+
   def initialize(num)
     @num = num
   end
