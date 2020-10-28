@@ -9,5 +9,6 @@ jobs:
       with:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - run: make
+    - run: make lint
     - run: make test
 
