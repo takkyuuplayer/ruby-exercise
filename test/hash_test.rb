@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'minitest/autorun'
 
 class HashTest < Minitest::Test
