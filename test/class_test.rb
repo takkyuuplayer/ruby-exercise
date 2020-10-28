@@ -3,11 +3,11 @@
 require 'minitest/autorun'
 
 class Point
-  @@some = 0
+  @some = 0
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(p_x, p_y)
+    @x = p_x
+    @y = p_y
   end
   attr_accessor :x, :y
 
@@ -21,8 +21,8 @@ class Point
     Math.hypot(point.x - @x, point.y - @y)
   end
 
-  def self.Some(s = nil)
-    s.nil? ? @@some : @@some = s
+  def self.some(some = nil)
+    some.nil? ? @some : @some = some
   end
 end
 
@@ -43,11 +43,11 @@ class PointTest < Minitest::Test
   end
 
   def test_class
-    assert_equal 0, Point.Some
+    assert_equal 0, Point.some
 
-    Point.Some(1)
+    Point.some(1)
 
-    assert_equal 1, Point.Some
+    assert_equal 1, Point.some
   end
 
   def test_super

@@ -4,8 +4,8 @@ require 'minitest/autorun'
 
 class StringNumber
   include Comparable
-  def <=>(rhs)
-    @number.to_i <=> rhs.number.to_i
+  def <=>(other)
+    @number.to_i <=> other.number.to_i
   end
 
   def initialize(number)

@@ -15,7 +15,7 @@ class DupCloneTest < Minitest::Test
     k = Klass.new(2)
 
     def k.square
-      @num * @num
+      @num**2
     end
     k.freeze
 
@@ -32,7 +32,7 @@ class DupCloneTest < Minitest::Test
     k = Klass.new(2)
 
     def k.square
-      @num * @num
+      @num**2
     end
     k.freeze
 

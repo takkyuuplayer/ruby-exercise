@@ -3,10 +3,6 @@
 require 'minitest/autorun'
 
 class NumberTest < Minitest::Test
-  def test_increment
-    counter = 0
-  end
-
   def test_bit_shift
     assert_equal 4, 1 << 2
   end
@@ -31,7 +27,7 @@ class NumberTest < Minitest::Test
 
   def test_comparison
     assert_equal 1 <=> 2, -1
-    assert_equal 1 <=> 1, 0
+    assert_equal 1 <=> 1, 0 # rubocop:disable Lint/BinaryOperatorWithIdenticalOperands
     assert_equal 1 <=> 0, 1
   end
 

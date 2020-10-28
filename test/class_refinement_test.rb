@@ -10,14 +10,14 @@ class Klass
   end
 
   def calc
-    @num ** 2
+    @num**2
   end
 end
 
 module M
   refine Klass do
     def calc
-      @num ** 3
+      @num**3
     end
   end
 end
