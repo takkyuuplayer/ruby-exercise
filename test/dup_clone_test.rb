@@ -2,7 +2,7 @@
 
 require 'minitest/autorun'
 
-class Klass
+class Klass2
   attr_accessor :num
 
   def initialize(num)
@@ -12,7 +12,7 @@ end
 
 class DupCloneTest < Minitest::Test
   def test_clone_will_copy_singular_method_or_frozen_state
-    k = Klass.new(2)
+    k = Klass2.new(2)
 
     def k.square
       @num**2
@@ -29,7 +29,7 @@ class DupCloneTest < Minitest::Test
   end
 
   def test_dup_will_not_copy_singular_method_or_frozen_state
-    k = Klass.new(2)
+    k = Klass2.new(2)
 
     def k.square
       @num**2
