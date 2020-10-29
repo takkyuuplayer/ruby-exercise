@@ -1,9 +1,11 @@
-require "minitest/autorun"
+# frozen_string_literal: true
+
+require 'minitest/autorun'
 
 class StringNumber
   include Comparable
-  def <=>(rhs)
-    @number.to_i <=> rhs.number.to_i
+  def <=>(other)
+    @number.to_i <=> other.number.to_i
   end
 
   def initialize(number)
@@ -21,4 +23,3 @@ class MixinTest < Minitest::Test
     assert_equal [one, two, ten], [two, one, ten].sort
   end
 end
-

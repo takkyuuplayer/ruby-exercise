@@ -1,7 +1,9 @@
-require "minitest/autorun"
+# frozen_string_literal: true
+
+require 'minitest/autorun'
 
 class MathTest < Minitest::Test
   def test_sqrt
-    assert_equal 2, Math::sqrt(4)
+    assert_equal 2, Math.sqrt(4)
   end
 end

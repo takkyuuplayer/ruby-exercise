@@ -1,7 +1,10 @@
-require "minitest/autorun"
+# frozen_string_literal: true
 
-class Klass
+require 'minitest/autorun'
+
+class Klass2
   attr_accessor :num
+
   def initialize(num)
     @num = num
   end
@@ -9,10 +12,10 @@ end
 
 class DupCloneTest < Minitest::Test
   def test_clone_will_copy_singular_method_or_frozen_state
-    k = Klass.new(2)
+    k = Klass2.new(2)
 
     def k.square
-      @num * @num
+      @num**2
     end
     k.freeze
 
@@ -26,12 +29,11 @@ class DupCloneTest < Minitest::Test
   end
 
   def test_dup_will_not_copy_singular_method_or_frozen_state
-    k = Klass.new(2)
+    k = Klass2.new(2)
 
     def k.square
-      @num * @num
+      @num**2
     end
-    k.taint
     k.freeze
 
     assert_equal true, k.methods.include?(:square)

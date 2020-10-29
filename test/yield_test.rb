@@ -1,4 +1,6 @@
-require "minitest/autorun"
+# frozen_string_literal: true
+
+require 'minitest/autorun'
 
 def foo
   yield(1, 2)

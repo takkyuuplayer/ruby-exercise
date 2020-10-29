@@ -1,28 +1,28 @@
-require "minitest/autorun"
+# frozen_string_literal: true
+
+require 'minitest/autorun'
 
 class Point
-  @@some = 0
+  @some = 0
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(p_x, p_y)
+    @x = p_x
+    @y = p_y
   end
   attr_accessor :x, :y
 
-  def distanceFromOrigin
-    Math::hypot(@x, @y)
+  def distance_from_origin
+    Math.hypot(@x, @y)
   end
 
   def distance(point = nil)
-    if point.nil?
-      return Math::hypot(@x, @y)
-    end
+    return Math.hypot(@x, @y) if point.nil?
 
-    return Math::hypot(point.x - @x, point.y - @y)
+    Math.hypot(point.x - @x, point.y - @y)
   end
 
-  def Point.Some(s = nil)
-    s.nil? ? @@some : @@some = s
+  def self.some(some = nil)
+    some.nil? ? @some : @some = some
   end
 end
 
@@ -39,15 +39,15 @@ class PointTest < Minitest::Test
     assert_equal 3, point.x
     assert_equal 4, point.y
 
-    assert_equal 5, point.distanceFromOrigin
+    assert_equal 5, point.distance_from_origin
   end
 
   def test_class
-    assert_equal 0, Point.Some
+    assert_equal 0, Point.some
 
-    Point.Some(1)
+    Point.some(1)
 
-    assert_equal 1, Point.Some
+    assert_equal 1, Point.some
   end
 
   def test_super

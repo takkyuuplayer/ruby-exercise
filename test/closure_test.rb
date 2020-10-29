@@ -1,10 +1,12 @@
-require "minitest/autorun"
+# frozen_string_literal: true
+
+require 'minitest/autorun'
 
 class ClosureTest < Minitest::Test
   def create_counter
     count = 0
 
-    return Proc.new do
+    proc do
       count += 1
       count
     end
@@ -16,7 +18,7 @@ class ClosureTest < Minitest::Test
     assert_equal 1, counter.call
     assert_equal 2, counter.call
 
-    counter2 = self.create_counter
+    counter2 = create_counter
 
     assert_equal 1, counter2.call
   end
