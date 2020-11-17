@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-def to_hex(r, g, b)
-  [r, g, b].reduce('#') do |prev, val|
+def to_hex(red, green, blue)
+  [red, green, blue].reduce('#') do |prev, val|
     prev += val.to_s(16).rjust(2, '0')
+    prev
   end
 end
 

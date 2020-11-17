@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-def fizz_buzz(n)
-  if (n % 15).zero?
+def fizz_buzz(num)
+  if (num % 15).zero?
     'Fizz Buzz'
-  elsif (n % 3).zero?
+  elsif (num % 3).zero?
     'Fizz'
-  elsif (n % 5).zero?
+  elsif (num % 5).zero?
     'Buzz'
   else
-    n.to_s
+    num.to_s
   end
 end
