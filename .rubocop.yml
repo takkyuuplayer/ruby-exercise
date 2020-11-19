@@ -11,8 +11,7 @@ inherit_from: .rubocop_todo.yml
 #
 # See https://docs.rubocop.org/rubocop/configuration
 Style/Documentation:
-  Exclude:
-    - '**/*_test.rb'
+  Enabled: false
 Metrics/MethodLength:
   Exclude:
     - '**/*_test.rb'

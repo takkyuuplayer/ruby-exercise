@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Gate
-  STATIONS = [:umeda, :juso, :mikuni]
-  FARES = [150, 190]
+  STATIONS = %i[umeda juso mikuni].freeze
+  FARES = [150, 190].freeze
 
   def initialize(name)
     @name = name
