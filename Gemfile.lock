@@ -2,7 +2,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
+    ipaddr (1.2.2)
+    jwt (2.2.2)
     minitest (5.14.2)
+    openssl (2.1.2)
+      ipaddr
     parallel (1.19.2)
     parser (2.7.2.0)
       ast (~> 2.4.1)
@@ -31,7 +35,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jwt
   minitest
+  openssl
   rake
   rubocop
   rubocop-performance
