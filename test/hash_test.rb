@@ -53,4 +53,16 @@ class HashTest < Minitest::Test
     assert_equal 1, hp[:a]
     assert_equal 1, hp.call(:a)
   end
+
+  def test_to_square
+    assert_equal 1, square(1)
+    assert_equal 4, square(2)
+    assert_equal 100, square(5)
+  end
+
+  def square(num)
+    @squares ||= {5 => 100}
+    @squares[num] ||= num**2
+  end
+
 end
